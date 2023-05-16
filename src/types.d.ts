@@ -3,5 +3,5 @@ export interface Question {
     question: string,
     code: string,
     answers: string[],
-    correctAnswer: mnumber
+    correctAnswer: number
 }

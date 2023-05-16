@@ -1,11 +1,11 @@
 import { create } from "zustand"
-import { persist } from "zustand/middleware";
-import { Question } from "../types";
+import { Question } from "../types"
 
 interface State {
     questions: Question[];
     currentQuestions: number;
     getQuestions: (limit: number) => void
+    selectAnswer: (questionId: number, answerINdex: number) => void
 }
 
 export const useQuestionsStore = create<State>()((set, get) => {
@@ -18,8 +18,11 @@ export const useQuestionsStore = create<State>()((set, get) => {
             const data = await response.json()
 
             const questions =  data.sort(() => Math.random() - 0.5).slice(0, limit)
-
             set({ questions})
-        }
+        },
+
+        selectAnswer: (questionId, answerIndex) => {
+            
+        },
     }
 })
