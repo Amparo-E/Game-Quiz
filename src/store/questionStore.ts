@@ -4,8 +4,10 @@ import { Question } from "../types"
 interface State {
     questions: Question[];
     currentQuestions: number;
-    getQuestions: (limit: number) => void
-    selectAnswer: (questionId: number, answerINdex: number) => void
+    getQuestions: (limit: number) => void;
+    selectAnswer: (questionId: number, answerINdex: number) => void;
+    goNextQuestion: () => void;
+    goPrevQuestion: () => void
 }
 
 export const useQuestionsStore = create<State>()((set, get) => {
@@ -37,5 +39,23 @@ export const useQuestionsStore = create<State>()((set, get) => {
 
               set({ questions: newQuestions  })
         },
+
+        goNextQuestion: () => {
+            const { currentQuestions, questions } = get()
+            const nextQuestion = currentQuestions + 1
+
+            if(nextQuestion < questions.length) {
+                set({ currentQuestions: nextQuestion })
+            }
+        },
+
+        goPrevQuestion: () => {
+            const { currentQuestions } = get()
+            const prevQuestion = currentQuestions - 1
+
+            if(prevQuestion >= 0){
+                set({ currentQuestions: prevQuestion })
+            }
+        }
     }
 })
