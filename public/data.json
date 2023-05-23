@@ -1,375 +1,322 @@
 [
   {
     "id": 1,
-    "question": "¿Cuál es la salida de este código?",
+    "question": "What is the result of this code?",
     "code": "console.log(typeof NaN)",
     "answers": ["undefined", "NaN", "string", "number"],
-    "correctAnswer": 3
+    "correctAnswer": 3,
+    "explanation": "The typeof operator returns the data type of a value. NaN represents a special numeric value that means 'Not a Number'. Its type is 'number'."
   },
   {
     "id": 2,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
+    "question": "What is the result of the following expression?",
     "code": "3 + 2 + '7'",
     "answers": ["12", "327", "57", "NaN"],
-    "correctAnswer": 2
+    "correctAnswer": 2,
+    "explanation": "In JavaScript, when an operation is encountered between a number and a string, the number is converted to a string and concatenation is performed. Therefore, '3 + 2' equals 5, and when concatenated with '7', the result is '57'."
   },
   {
     "id": 3,
-    "question": "¿Cuál es la salida de este código?",
+    "question": "What is the output of this code?",
     "code": "let a = 10;\nlet b = () => {\n  console.log(this.a);\n}\nb();",
     "answers": ["undefined", "null", "10", "ReferenceError"],
-    "correctAnswer": 0
+    "correctAnswer": 0,
+    "explanation": "In this case, the function b is an arrow function, which does not have its own this object. Therefore, this.a refers to undefined."
   },
   {
     "id": 4,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
+    "question": "What is the result of the following expression?",
     "code": "1 + 2 + '3' + 4 + 5",
     "answers": ["'3345'", "15", "NaN", "Error"],
-    "correctAnswer": 0
+    "correctAnswer": 0,
+    "explanation": "In this expression, concatenation of values is performed. The concatenation is done from left to right, so the numeric values are converted to strings. Therefore, the final result is the string '3345'."
   },
   {
     "id": 5,
-    "question": "¿Cuál es la salida de este código?",
+    "question": "What is the output of this code?",
     "code": "for (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 1);\n}",
     "answers": ["0 1 2", "3 3 3", "1 2 3", "2 1 0"],
-    "correctAnswer": 1
+    "correctAnswer": 1,
+    "explanation": "In this code, the setTimeout function is used to print the value of i after 1 millisecond. However, due to the behavior of var variables in JavaScript, the loop will have already completed by the time the function is executed, and the final value of i will be 3 for all iterations of the loop."
   },
   {
     "id": 6,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
+    "question": "What is the result of the following expression?",
     "code": "2 > '3'",
     "answers": ["true", "false", "undefined", "NaN"],
-    "correctAnswer": 1
+    "correctAnswer": 1,
+    "explanation": "When comparing a number and a string, JavaScript attempts to convert the string into a number before performing the comparison. In this case, '3' is converted to the number 3. The comparison 2 > 3 is false."
   },
   {
     "id": 7,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3, 4, 5];\nconst [x, y, ...rest] = arr;\nconsole.log(rest.length);",
-    "answers": ["0", "1", "2", "3"],
-    "correctAnswer": 3
+    "question": "What is the output of this code?",
+    "code": "console.log(1 + +'2' + '2');",
+    "answers": ["'122'", "'32'", "NaN", "Error"],
+    "correctAnswer": 0,
+    "explanation": "In this expression, the unary '+' operator is used to convert the string '2' into a number. The addition 1 + 2 + 2 is performed between numbers, and then concatenated with the result '122'."
   },
   {
     "id": 8,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'2' + 3 * 4",
-    "answers": ["14", "20", "26", "Error"],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "typeof typeof 1",
+    "answers": ["number", "string", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "The typeof operator returns a string representing the data type of a value. In this case, typeof 1 returns 'number', and typeof 'number' returns 'string'."
   },
   {
     "id": 9,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3];\narr[10] = 10;\nconsole.log(arr.length);",
-    "answers": ["3", "10", "11", "undefined"],
-    "correctAnswer": 2
+    "question": "What is the result of this code?",
+    "code": "console.log(1 == '1');",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When using the equality operator == in JavaScript, implicit type conversion is performed. In this case, the number 1 is converted to a string before the comparison, so 1 == '1' is true."
+  },
+  {
+    "id": 10,
+    "question": "What is the output of this code?",
+    "code": "console.log('Hello' - 'World');",
+    "answers": ["'HelloWorld'", "NaN", "NaN", "Error"],
+    "correctAnswer": 2,
+    "explanation": "When attempting to perform arithmetic operation between two strings, JavaScript tries to convert the strings into numbers. However, 'Hello' and 'World' cannot be converted into numbers, so the operation results in NaN (Not a Number)."
   },
   {
     "id": 11,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "console.log(0.1 + 0.2 === 0.3)",
-    "answers": ["true", "false", "undefined", "NaN"],
-    "correctAnswer": 1
+    "question": "What is the result of the following expression?",
+    "code": "[] + []",
+    "answers": ["''", "0", "[]", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When using the addition operator between two arrays, JavaScript converts them to strings by calling the `toString` method on each array. An empty array `[]` converts to an empty string `''`. Therefore, the result is an empty string."
   },
   {
     "id": 12,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "[] + []",
-    "answers": ["[]", "''", "undefined", "NaN"],
-    "correctAnswer": 1
+    "question": "What is the output of this code?",
+    "code": "console.log(typeof null)",
+    "answers": ["object", "null", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The `typeof` operator returns 'object' for the `null` value. This is a historical bug in JavaScript and is considered an error in the language."
   },
   {
     "id": 13,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const obj1 = {a: 'foo'};\nconst obj2 = {b: 'bar'};\nconst obj3 = {c: 'baz'};\nconst obj4 = Object.assign(obj1, obj2, obj3);\nconsole.log(obj4);",
-    "answers": [
-      "{a: 'foo', b: 'bar', c: 'baz'}",
-      "{b: 'bar', c: 'baz'}",
-      "{a: 'foo', b: 'bar'}",
-      "{c: 'baz'}"
-    ],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "5 == '5'",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When using the equality operator `==` in JavaScript, implicit type conversion is performed. In this case, the string `'5'` is converted to a number before the comparison, so `5 == '5'` is true."
   },
   {
     "id": 14,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'foo' instanceof String",
-    "answers": ["true", "false", "null", "undefined"],
-    "correctAnswer": 1
+    "question": "What is the output of this code?",
+    "code": "console.log(2 ** 3)",
+    "answers": ["8", "5", "6", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The `**` operator is the exponentiation operator introduced in ECMAScript 2016. `2 ** 3` means 2 raised to the power of 3, which is equal to 8."
   },
   {
     "id": 15,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr1 = [1, 2, 3];\nconst arr2 = [4, 5, 6];\nconst arr3 = [...arr1, ...arr2];\nconsole.log(arr3);",
-    "answers": [
-      "[1, 2, 3, 4, 5, 6]",
-      "[[1, 2, 3], [4, 5, 6]]",
-      "[[1, 2, 3], 4, 5, 6]",
-      "[1, 2, 3, [4, 5, 6]]"
-    ],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "'20' + 1 - 1",
+    "answers": ["20", "10", "21", "Error"],
+    "correctAnswer": 1,
+    "explanation": "When using the addition operator `+` between a string and a number, JavaScript performs string concatenation. However, when using the subtraction operator `-`, JavaScript performs numerical subtraction. Therefore, `'20' + 1 - 1` equals `'201' - 1`, which results in the number 10."
   },
   {
     "id": 16,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "parseInt('0.1')",
-    "answers": ["0.1", "1", "0", "Error"],
-    "correctAnswer": 2
+    "question": "What is the output of this code?",
+    "code": "console.log([] == ![])",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The `!` operator inverts the truthiness of a value. An empty array `[]` is a truthy value, and its inversion `![]` is `false`. When using the equality operator `==` in JavaScript, implicit type conversion is performed. In this case, `false` is converted to the number `0` before the comparison, so `[] == ![]` is true."
   },
   {
     "id": 17,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const a = {x: 1};\nconst b = {y: 2};\nconst c = Object.assign({}, a, b);\nconsole.log(c);",
-    "answers": ["{x: 1}", "{y: 2}", "{x: 1, y: 2}", "{}"],
-    "correctAnswer": 2
+    "question": "What is the result of the following expression?",
+    "code": "typeof [] === typeof {}",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The `typeof` operator returns a string representing the data type of a value. The `[]` expression creates an array, which has a type of `'object'`. Similarly, the `{}` expression creates an object, which also has a type of `'object'`. Therefore, `typeof [] === typeof {}` is true."
   },
   {
     "id": 18,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'foo' + new String('bar')",
-    "answers": ["'foobar'", "'barfoo'", "TypeError", "NaN"],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log(3 > 2 > 1)",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "The `>` operator performs a numerical comparison. The expression `3 > 2` evaluates to `true`. However, when using the `>` operator multiple times, JavaScript performs left-to-right associativity. So, `true > 1` is equivalent to `1 > 1`, which evaluates to `false`."
   },
   {
     "id": 19,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const obj = {a: 1};\nfunction foo(o) {\n o = {b: 2};\n}\nfoo(obj);\nconsole.log(obj);",
-    "answers": ["{a: 1}", "{b: 2}", "{}", "undefined"],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "1 + -'1'",
+    "answers": ["0", "-1", "NaN", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The unary `-` operator inverts the sign of a value. The string `-'1'` is converted to the number `-1`. When adding `1` and `-1`, the result is `0`."
   },
   {
     "id": 20,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "typeof null",
-    "answers": ["'object'", "'null'", "'undefined'", "TypeError"],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log((() => { return 5 })())",
+    "answers": ["undefined", "5", "SyntaxError", "Error"],
+    "correctAnswer": 1,
+    "explanation": "This code defines an arrow function that immediately invokes itself. The arrow function `() => { return 5 }` returns the value `5`. The extra pair of parentheses at the end `(())` invokes the function and logs the returned value `5`."
   },
   {
     "id": 21,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr1 = [1, 2, 3];\nconst arr2 = [4, 5, 6];\narr1.push(...arr2);\nconsole.log(arr1);",
-    "answers": [
-      "[1, 2, 3, 4, 5, 6]",
-      "[[1, 2, 3], [4, 5, 6]]",
-      "[[1, 2, 3], 4, 5, 6]",
-      "[1, 2, 3, [4, 5, 6]]"
-    ],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log('5' - 3)",
+    "answers": ["2", "8", "NaN", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When using the subtraction operator `-` between a string and a number, JavaScript converts the string to a number before performing the subtraction. So, `'5' - 3` is equal to `5 - 3`, which evaluates to `2`."
   },
   {
     "id": 22,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'foo' > 'bar'",
-    "answers": ["true", "false", "undefined", "NaN"],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "false + true",
+    "answers": ["false", "true", "1", "Error"],
+    "correctAnswer": 2,
+    "explanation": "When using the `+` operator between boolean values, JavaScript converts `false` to `0` and `true` to `1`. So, `false + true` evaluates to `0 + 1`, which equals `1`."
   },
   {
     "id": 23,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const obj = {a: 1};\nfunction foo(o) {\n o.a = 2;\n}\nfoo(obj);\nconsole.log(obj);",
-    "answers": ["{a: 1}", "{a: 2}", "{}", "undefined"],
-    "correctAnswer": 1
+    "question": "What is the output of this code?",
+    "code": "console.log([] instanceof Array)",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The `instanceof` operator checks if an object belongs to a specific class or constructor. In this case, `[]` is an instance of the `Array` class, so `[] instanceof Array` is true."
   },
   {
     "id": 24,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "2 + true",
-    "answers": ["3", "2", "true", "Error"],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "'Hello' instanceof String",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "When using the `instanceof` operator with a primitive value, JavaScript automatically converts the primitive value to its corresponding object wrapper. In this case, `'Hello'` is automatically converted to a `String` object. However, the `String` object is not an instance of the `String` constructor, so `'Hello' instanceof String` is false."
   },
   {
     "id": 25,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr1 = [1, 2, 3];\nconst arr2 = [4, 5, 6];\nconst arr3 = [7, 8, 9];\nconst arr4 = [].concat(arr1, arr2, arr3);\nconsole.log(arr4);",
-    "answers": [
-      "[1, 2, 3, 4, 5, 6, 7, 8, 9]",
-      "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
-      "[[1, 2, 3], 4, 5, 6, [7, 8, 9]]",
-      "[1, 2, 3, [4, 5, 6], 7, 8, 9]"
-    ],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log(Math.max([1, 2, 3]))",
+    "answers": ["1", "2", "3", "Error"],
+    "correctAnswer": 3,
+    "explanation": "The `Math.max()` function expects individual arguments, not an array. When passing an array `[1, 2, 3]`, the function returns `NaN` because it cannot compare an array with numbers directly. Thus, an error occurs."
   },
   {
     "id": 26,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'1' - - '1'",
-    "answers": ["0", "2", "'11'", "NaN"],
-    "correctAnswer": 1
+    "question": "What is the result of the following expression?",
+    "code": "'Hello' + 5 * 2",
+    "answers": ["'Hello10'", "'Hello52'", "'Hello7'", "Error"],
+    "correctAnswer": 1,
+    "explanation": "The multiplication operator `*` has higher precedence than the addition operator `+`. So, `5 * 2` evaluates to `10`. When concatenating the string `'Hello'` with the number `10`, the result is the string `'Hello10'`."
   },
   {
     "id": 27,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "console.log(typeof [][Symbol.iterator]);",
-    "answers": ["undefined", "'array'", "'object'", "'function'"],
-    "correctAnswer": 3
+    "question": "What is the output of this code?",
+    "code": "console.log([10] === [10])",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "When comparing two arrays using the strict equality operator `===`, JavaScript checks if they refer to the same memory location. Even if the arrays have the same values, they are considered different objects, so `[10] === [10]` evaluates to `false`."
   },
   {
     "id": 28,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "[1, 2, 3].map(num => num * 2);",
-    "answers": ["[2, 4, 6]", "[1, 2, 3, 1, 2, 3]", "[2, 2, 2]", "[1, 4, 9]"],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "NaN === NaN",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "NaN (Not-a-Number) is a special numeric value that represents an unrepresentable result. In JavaScript, NaN is considered not equal to any other value, including itself. So, `NaN === NaN` evaluates to `false`."
   },
   {
     "id": 29,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "let a = 10;\nlet b = () => {\n console.log(this.a);\n}\nlet c = {a: 5, b: b};\nc.b();",
-    "answers": ["undefined", "null", "10", "5"],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log(0.1 + 0.2 === 0.3)",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "Due to the limitations of floating-point arithmetic, the expression `0.1 + 0.2` does not result in exactly `0.3`. It is a close approximation but not an exact match. Therefore, `0.1 + 0.2 === 0.3` evaluates to `false`."
   },
   {
     "id": 30,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "true + false",
-    "answers": ["1", "0", "'truefalse'", "Error"],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "typeof typeof 1",
+    "answers": ["'number'", "'string'", "'undefined'", "'Error'"],
+    "correctAnswer": 1,
+    "explanation": "The `typeof` operator returns a string indicating the data type of a value. In this case, `typeof 1` returns the string `'number'`. So, `typeof 'number'` evaluates to `'string'`."
   },
   {
     "id": 31,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3, 4, 5];\nconst sum = arr.reduce((total, num) => total + num);\nconsole.log(sum);",
-    "answers": ["15", "10", "5", "Error"],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log(2 + '2' - 1)",
+    "answers": ["3", "'21'", "'221'", "Error"],
+    "correctAnswer": 1,
+    "explanation": "When using the `+` operator between a number and a string, JavaScript converts the number to a string and performs string concatenation. So, `2 + '2'` evaluates to the string `'22'`. Then, the `-` operator tries to subtract `1` from the string, which triggers automatic string-to-number conversion. Therefore, `'22' - 1` equals `21`."
   },
   {
     "id": 32,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'foo' == new String('foo')",
-    "answers": ["true", "false", "null", "undefined"],
-    "correctAnswer": 0
+    "question": "What is the result of the following expression?",
+    "code": "null == undefined",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The `==` operator performs type coercion before comparison. When comparing `null` and `undefined`, they are considered equal in value but different in type. So, `null == undefined` evaluates to `true`."
   },
   {
     "id": 33,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3, 4, 5];\nconst filteredArr = arr.filter(num => num % 2 === 0);\nconsole.log(filteredArr);",
-    "answers": ["[2, 4]", "[1, 3, 5]", "[1, 2, 3, 4, 5]", "[]"],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log('Hello'.length)",
+    "answers": ["5", "4", "6", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The `length` property is used to determine the number of characters in a string. In this case, the string `'Hello'` has 5 characters, so `console.log('Hello'.length)` outputs `5`."
   },
   {
     "id": 34,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "new String('foo') === 'foo'",
-    "answers": ["true", "false", "null", "undefined"],
-    "correctAnswer": 1
+    "question": "What is the result of the following expression?",
+    "code": "typeof NaN",
+    "answers": ["'number'", "'NaN'", "'undefined'", "'Error'"],
+    "correctAnswer": 0,
+    "explanation": "NaN (Not-a-Number) is a special numeric value representing an unrepresentable result. Despite being called NaN, its type in JavaScript is 'number'. Therefore, typeof NaN evaluates to 'number'."
   },
   {
     "id": 35,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const obj1 = {a: 'foo'};\nconst obj2 = {b: 'bar'};\nconst obj3 = {...obj1, ...obj2};\nconsole.log(obj3);",
-    "answers": [
-      "{a: 'foo', b: 'bar'}",
-      "{b: 'bar'}",
-      "{a: 'foo'}",
-      "SyntaxError"
-    ],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log(typeof typeof null)",
+    "answers": ["'object'", "'null'", "'undefined'", "'string'"],
+    "correctAnswer": 3,
+    "explanation": "The typeof operator returns a string indicating the data type of a value. In this case, typeof null evaluates to 'object'. So, typeof 'object' evaluates to 'string'."
   },
   {
     "id": 36,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
+    "question": "What is the result of the following expression?",
     "code": "[] == ![]",
-    "answers": ["true", "false", "null", "undefined"],
-    "correctAnswer": 0
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The == operator performs type coercion before comparison. The ! operator negates the truthiness of a value. When [] (an empty array) is coerced to a boolean, it becomes true. So, ![] evaluates to false. Since true and false have the same type, they are compared as numbers. In numeric comparison, true is treated as 1, and false is treated as 0. Therefore, [] == ![] is equivalent to [] == 0, which evaluates to true."
   },
   {
     "id": 37,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3];\nconst [x, y, z] = arr;\nconsole.log(z);",
-    "answers": ["1", "2", "3", "undefined"],
-    "correctAnswer": 2
+    "question": "What is the output of this code?",
+    "code": "console.log(3.toString())",
+    "answers": ["'3'", "3", "undefined", "Error"],
+    "correctAnswer": 3,
+    "explanation": "When trying to call a method on a numeric literal directly, you need to use parentheses or convert the number to a string explicitly. In this case, `3.toString()` throws an error because the period (`.`) after the number is interpreted as a decimal point. To fix this, you can enclose the number in parentheses like `(3).toString()` or convert it to a string using the `String` function like `String(3)`."
   },
   {
     "id": 38,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'2' > 1",
-    "answers": ["true", "false", "undefined", "NaN"],
-    "correctAnswer": 0
+    "question": "What is the output of this code?",
+    "code": "console.log(typeof 42)",
+    "answers": ["'number'", "'string'", "'boolean'", "'undefined'"],
+    "correctAnswer": 0,
+    "explanation": "The `typeof` operator returns a string indicating the data type of a value. In this case, the number `42` has a type of `'number'`. Therefore, `console.log(typeof 42)` outputs `'number'`."
   },
   {
     "id": 39,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr1 = [1, 2, 3];\nconst arr2 = arr1.map(num => num * 2);\nconsole.log(arr2);",
-    "answers": ["[1, 2, 3]", "[2, 4, 6]", "[2, 2, 2]", "[1, 4, 9]"],
-    "correctAnswer": 1
+    "question": "What is the result of the following expression?",
+    "code": "NaN === NaN",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "NaN (Not-a-Number) is a special numeric value representing an unrepresentable result. Surprisingly, NaN is not equal to itself. So, `NaN === NaN` evaluates to `false`."
   },
   {
     "id": 40,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "undefined == null",
-    "answers": ["true", "false", "null", "undefined"],
-    "correctAnswer": 0
-  },
-  {
-    "id": 41,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3];\nconst [x, ...rest] = arr;\nconsole.log(rest);",
-    "answers": ["[1]", "[2, 3]", "[3]", "[]"],
-    "correctAnswer": 1
-  },
-  {
-    "id": 42,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'foo' + 'bar' + 2",
-    "answers": ["'foobar2'", "'foo2bar'", "'2foobar'", "Error"],
-    "correctAnswer": 1
-  },
-  {
-    "id": 43,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3];\nconst sum = arr.reduce((total, num) => total + num, 0);\nconsole.log(sum);",
-    "answers": ["6", "5", "3", "0"],
-    "correctAnswer": 0
-  },
-  {
-    "id": 44,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "2 * '3'",
-    "answers": ["6", "5", "'6'", "Error"],
-    "correctAnswer": 0
-  },
-  {
-    "id": 45,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const obj = {a: 'foo', b: 'bar'};\nfor (let key in obj) {\n console.log(key);\n}",
-    "answers": ["'foo', 'bar'", "{'a', 'b'}", "SyntaxError", "undefined"],
-    "correctAnswer": 1
-  },
-  {
-    "id": 46,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'2' + true",
-    "answers": ["'2true'", "'3'", "3", "Error"],
-    "correctAnswer": 0
-  },
-  {
-    "id": 47,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr1 = [1, 2, 3];\nconst arr2 = [4, 5, 6];\nconst arr3 = [...arr1, ...arr2];\nconsole.log(arr3);",
-    "answers": [
-      "[1, 2, 3, 4, 5, 6]",
-      "[[1, 2, 3], [4, 5, 6]]",
-      "[[1, 2, 3], 4, 5, 6]",
-      "[1, 2, 3, [4, 5, 6]]"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": 48,
-    "question": "¿Cuál es el resultado de la siguiente expresión?",
-    "code": "'foo' > 1",
-    "answers": ["true", "false", "undefined", "NaN"],
-    "correctAnswer": 1
-  },
-  {
-    "id": 49,
-    "question": "¿Cuál es la salida de este código?",
-    "code": "const arr = [1, 2, 3];\nconst [x, y] = arr;\nconsole.log(y);",
-    "answers": ["1", "2", "3", "undefined"],
-    "correctAnswer": 1
-  },
-  {
-    "id": 50,
-    "question": "¿Cuál es el resultado de la siguiente expresión: ",
-    "code": "[1, 2, 3].filter(num => num > 1);",
-    "answers": ["[1, 2, 3]", "[2, 3]", "[1]", "[3]"],
-    "correctAnswer": 1
+    "question": "What is the output of this code?",
+    "code": "console.log(1 + '1' + 1)",
+    "answers": ["'111'", "111", "3", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When using the `+` operator between a string and a number, JavaScript performs string concatenation. In this case, `1 + '1'` evaluates to the string `'11'`. Then, `'11' + 1` also performs string concatenation, resulting in the string `'111'`. Therefore, `console.log(1 + '1' + 1)` outputs `'111'`."
   }
 ]

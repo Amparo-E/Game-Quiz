@@ -7,7 +7,8 @@ interface State {
     getQuestions: (limit: number) => void;
     selectAnswer: (questionId: number, answerINdex: number) => void;
     goNextQuestion: () => void;
-    goPrevQuestion: () => void
+    goPrevQuestion: () => void;
+    timerNextQuestion: () => void;
 }
 
 export const useQuestionsStore = create<State>()((set, get) => {
@@ -25,6 +26,7 @@ export const useQuestionsStore = create<State>()((set, get) => {
 
         selectAnswer: (questionId, answerIndex) => {
             const { questions } = get()
+            const { goNextQuestion } = get()
 
               const newQuestions = structuredClone(questions);
               const questionindex = newQuestions.findIndex((q: Question) => q.id === questionId)
@@ -38,6 +40,10 @@ export const useQuestionsStore = create<State>()((set, get) => {
               }
 
               set({ questions: newQuestions  })
+
+                setTimeout(() => {
+                    goNextQuestion()
+                }, 2000)
         },
 
         goNextQuestion: () => {
@@ -56,6 +62,11 @@ export const useQuestionsStore = create<State>()((set, get) => {
             if(prevQuestion >= 0){
                 set({ currentQuestions: prevQuestion })
             }
+        },
+
+        timerNextQuestion: () => {
+            
+
         }
     }
 })

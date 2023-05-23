@@ -2,6 +2,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { type Question } from "../types";
 import { useQuestionsStore } from "../store/questionStore";
+import { InfoIcon } from "./Icons";
 
 const getBackground = (info: Question, index: number) => {
   const { userSelectedAnswer, correctAnswer } = info;
@@ -16,9 +17,11 @@ export const CurrentCard = ({ info }: { info: Question }) => {
   const { id, question, code, answers } = info;
   const selectAnswer = useQuestionsStore((state) => state.selectAnswer);
 
+
   return (
     <div className="w-full flex flex-col border border-black p-4">
       <h5 className="text-xl pb-6">{question}</h5>
+      <InfoIcon/>
       <SyntaxHighlighter
         language="javascript"
         style={atomOneDark}
