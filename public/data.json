@@ -5,7 +5,7 @@
     "code": "console.log(typeof NaN)",
     "answers": ["undefined", "NaN", "string", "number"],
     "correctAnswer": 3,
-    "explanation": "The typeof operator returns the data type of a value. NaN represents a special numeric value that means 'Not a Number'. Its type is 'number'."
+    "explanation": "The typeof operator returns the data type of a value. <br>NaN represents a special numeric value that means 'Not a Number'. Its type is 'number'."
   },
   {
     "id": 2,
@@ -141,7 +141,7 @@
     "code": "console.log(3 > 2 > 1)",
     "answers": ["true", "false", "undefined", "Error"],
     "correctAnswer": 1,
-    "explanation": "The `>` operator performs a numerical comparison. The expression `3 > 2` evaluates to `true`. However, when using the `>` operator multiple times, JavaScript performs left-to-right associativity. So, `true > 1` is equivalent to `1 > 1`, which evaluates to `false`."
+    "explanation": "The > operator performs a numerical comparison. The expression `3 > 2` evaluates to `true`. However, when using the `>` operator multiple times, JavaScript performs left-to-right associativity. So, `true > 1` is equivalent to `1 > 1`, which evaluates to `false`."
   },
   {
     "id": 19,
@@ -204,7 +204,7 @@
     "question": "What is the result of the following expression?",
     "code": "'Hello' + 5 * 2",
     "answers": ["'Hello10'", "'Hello52'", "'Hello7'", "Error"],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "explanation": "The multiplication operator `*` has higher precedence than the addition operator `+`. So, `5 * 2` evaluates to `10`. When concatenating the string `'Hello'` with the number `10`, the result is the string `'Hello10'`."
   },
   {
@@ -318,5 +318,165 @@
     "answers": ["'111'", "111", "3", "Error"],
     "correctAnswer": 0,
     "explanation": "When using the `+` operator between a string and a number, JavaScript performs string concatenation. In this case, `1 + '1'` evaluates to the string `'11'`. Then, `'11' + 1` also performs string concatenation, resulting in the string `'111'`. Therefore, `console.log(1 + '1' + 1)` outputs `'111'`."
+  },
+  {
+    "id": 41,
+    "question": "What is the output of this code?",
+    "code": "console.log('10' - 5)",
+    "answers": ["15", "'105'", "5", "Error"],
+    "correctAnswer": 2,
+    "explanation": "When the - operator is used between a string and a number, JavaScript tries to convert the string to a number. In this case, the string '10' is converted to the number 10, and the subtraction operation 10 - 5 results in 5."
+  },
+  {
+    "id": 42,
+    "question": "What is the result of the following expression?",
+    "code": "false == ''",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The == operator performs type coercion before comparison. When comparing a boolean (false) and an empty string (''), they are both considered falsy values and are considered equal in value. Therefore, false == '' evaluates to true."
+  },
+  {
+    "id": 43,
+    "question": "What is the output of this code?",
+    "code": "console.log([1, 2] + [3, 4])",
+    "answers": ["'1,23,4'", "4", "[1, 2, 3, 4]", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When the + operator is used between arrays, JavaScript converts the arrays to strings and performs string concatenation. In this case, [1, 2] is converted to the string '1,2', and [3, 4] is converted to the string '3,4'. The concatenation of these strings results in '1,23,4'."
+  },
+  {
+    "id": 44,
+    "question": "What is the result of the following expression?",
+    "code": "typeof []",
+    "answers": ["'object'", "'array'", "'undefined'", "'Error'"],
+    "correctAnswer": 0,
+    "explanation": "In JavaScript, arrays are considered a special type of object. Therefore, the typeof operator returns 'object' when used with an array."
+  },
+  {
+    "id": 45,
+    "question": "What is the output of this code?",
+    "code": "console.log(null + 5)",
+    "answers": ["5", "null5", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When the + operator is used between null and a number, null is coerced to the number 0. So, null + 5 evaluates to 5."
+  },
+  {
+    "id": 46,
+    "question": "What is the result of the following expression?",
+    "code": "true === 'true'",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "The === operator performs strict equality comparison without type coercion. When comparing a boolean (true) and a string ('true'), they are different in type and value. Therefore, true === 'true' evaluates to false."
+  },
+  {
+    "id": 47,
+    "question": "What is the output of this code?",
+    "code": "console.log(Math.max([1, 2, 3]))",
+    "answers": ["3", "[1, 2, 3]", "undefined", "Error"],
+    "correctAnswer": 2,
+    "explanation": "The Math.max function expects individual numeric arguments, not an array. When passed an array, it evaluates Math.max(NaN) because the array is converted to a string. As a result, console.log(Math.max([1, 2, 3])) outputs NaN (Not-a-Number)."
+  },
+  {
+    "id": 48,
+    "question": "What is the result of the following expression?",
+    "code": "'5' - - '2'",
+    "answers": ["3", "7", "'52'", "Error"],
+    "correctAnswer": 1,
+    "explanation": "The - operator performs subtraction. However, when used consecutively as - -, it cancels out and acts as an addition operator. In this case, '5' - - '2' is equivalent to '5' + '2', which results in the string '52'."
+  },
+  {
+    "id": 49,
+    "question": "What is the output of this code?",
+    "code": "console.log('OpenAI'.substring(2, 5))",
+    "answers": ["'enA'", "'pen'", "'enAI'", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The substring method is used to extract a portion of a string between two indices. In this case, 'OpenAI'.substring(2, 5) extracts the characters from index 2 to index 4 (excluding the character at index 5). Therefore, it outputs the string 'enA'."
+  },
+  {
+    "id": 50,
+    "question": "What is the result of the following expression?",
+    "code": "undefined == null",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The == operator performs type coercion before comparison. When comparing undefined and null, they are considered equal in value. Therefore, undefined == null evaluates to true."
+  },
+  {
+    "id": 51,
+    "question": "What is the output of this code?",
+    "code": "console.log(typeof NaN)",
+    "answers": ["'number'", "'NaN'", "'undefined'", "'Error'"],
+    "correctAnswer": 0,
+    "explanation": "The typeof operator returns 'number' when used with NaN. Despite being classified as a number, NaN represents an invalid or unrepresentable value. It stands for 'Not-a-Number'."
+  },
+  {
+    "id": 52,
+    "question": "What is the result of the following expression?",
+    "code": "'foo' + 2 + 3",
+    "answers": ["'foo23'", "'foo5'", "'NaN'", "'Error'"],
+    "correctAnswer": 0,
+    "explanation": "When the + operator encounters a string operand, it performs string concatenation. In this case, 'foo' + 2 results in 'foo2', and then 'foo2' + 3 results in 'foo23'."
+  },
+  {
+    "id": 53,
+    "question": "What is the output of this code?",
+    "code": "console.log(0.1 + 0.2 === 0.3)",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "Due to floating-point precision limitations, the expression 0.1 + 0.2 does not evaluate to exactly 0.3. Therefore, 0.1 + 0.2 === 0.3 returns false."
+  },
+  {
+    "id": 54,
+    "question": "What is the result of the following expression?",
+    "code": "5 > 4 > 3",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "The comparison operators (> in this case) are left-to-right associative. The expression is evaluated as (5 > 4) > 3, which becomes true > 3. When comparing a boolean (true) with a number (3), the boolean is coerced to a number (1). Therefore, the expression becomes 1 > 3, which is false."
+  },
+  {
+    "id": 55,
+    "question": "What is the output of this code?",
+    "code": "console.log('10' + 5)",
+    "answers": ["'105'", "105", "'15'", "Error"],
+    "correctAnswer": 0,
+    "explanation": "When the + operator encounters a string operand, it performs string concatenation. In this case, '10' + 5 results in the string '105'."
+  },
+  {
+    "id": 56,
+    "question": "What is the result of the following expression?",
+    "code": "[] == ![]",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 0,
+    "explanation": "The == operator performs type coercion before comparison. The right-hand side ![] is evaluated as false, and the left-hand side [] is an empty array (a truthy value). When comparing a truthy value with false, they are considered equal in value. Therefore, [] == ![] returns true."
+  },
+  {
+    "id": 57,
+    "question": "What is the output of this code?",
+    "code": "console.log(2 ** 3)",
+    "answers": ["5", "6", "8", "Error"],
+    "correctAnswer": 2,
+    "explanation": "The ** operator is the exponentiation operator introduced in ECMAScript 2016 (ES7). It raises the left operand to the power of the right operand. In this case, 2 ** 3 results in 8."
+  },
+  {
+    "id": 58,
+    "question": "What is the result of the following expression?",
+    "code": "console.log([] + {})",
+    "answers": ["'[]{}'", "'[object Object]'", "'[object Array]'", "Error"],
+    "correctAnswer": 1,
+    "explanation": "When the + operator encounters an object operand, it converts it to a string using the toString method. An empty array [] is converted to an empty string '', and the object {} is converted to '[object Object]'. Therefore, [] + {} outputs '[object Object]'."
+  },
+  {
+    "id": 59,
+    "question": "What is the output of this code?",
+    "code": "console.log(2 + '2' - 1)",
+    "answers": ["3", "21", "'21'", "Error"],
+    "correctAnswer": 2,
+    "explanation": "When the + operator encounters a string operand, it performs string concatenation. In this case, 2 + '2' results in the string '22'. Then, '22' - 1 performs subtraction and tries to convert '22' to a number, resulting in the number 21."
+  },
+  {
+    "id": 60,
+    "question": "What is the result of the following expression?",
+    "code": "console.log('2' > '12')",
+    "answers": ["true", "false", "undefined", "Error"],
+    "correctAnswer": 1,
+    "explanation": "When comparing strings, JavaScript performs character-by-character comparison based on Unicode values. In this case, the first characters '2' and '1' are compared, and since '2' is greater than '1', the expression '2' > '12' returns false."
   }
 ]

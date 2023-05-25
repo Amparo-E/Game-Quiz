@@ -7,6 +7,7 @@ import { Score } from "./Score"
 export const Game = () => {
     const questions = useQuestionsStore(state => state.questions)
     const currentQuestion = useQuestionsStore(state => state.currentQuestions)
+    const reset = useQuestionsStore(state => state.reset)
     const goNextQuestion = useQuestionsStore(state => state.goNextQuestion)
     const goPrevQuestion = useQuestionsStore(state => state.goPrevQuestion)
     const currentQuestionInfo = questions[currentQuestion]
@@ -20,6 +21,7 @@ export const Game = () => {
             </div>
             <CurrentCard info={currentQuestionInfo}/>
             <Score/>
+            <ButtonChange content={'reset'} action={reset}/>
         </>
     )
 }

@@ -1,5 +1,6 @@
 import { create } from "zustand"
 import { Question } from "../types"
+import { persist } from "zustand/middleware";
 
 interface State {
     questions: Question[];
@@ -8,10 +9,10 @@ interface State {
     selectAnswer: (questionId: number, answerINdex: number) => void;
     goNextQuestion: () => void;
     goPrevQuestion: () => void;
-    timerNextQuestion: () => void;
+    reset: () => void;
 }
 
-export const useQuestionsStore = create<State>()((set, get) => {
+export const useQuestionsStore = create<State>()(persist((set, get) => {
     return {
         questions: [],
         currentQuestions: 0,
@@ -40,10 +41,6 @@ export const useQuestionsStore = create<State>()((set, get) => {
               }
 
               set({ questions: newQuestions  })
-
-                setTimeout(() => {
-                    goNextQuestion()
-                }, 2000)
         },
 
         goNextQuestion: () => {
@@ -64,9 +61,10 @@ export const useQuestionsStore = create<State>()((set, get) => {
             }
         },
 
-        timerNextQuestion: () => {
-            
-
+        reset: () => {
+            set({ questions: [], currentQuestions: 0})
         }
     }
-})
+}, {
+    name: "answer-storage"
+}))

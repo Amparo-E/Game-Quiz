@@ -1,11 +1,12 @@
 interface ButtonProps {
-    content: JSX.Element;
+    content: JSX.Element | string;
     action: () => void;
-    disabled: boolean;
+    disabled?: boolean;
+    style?: string;
 }
 
-export const ButtonChange = ({ content, action, disabled }: ButtonProps) => {
+export const ButtonChange = ({ content, action, disabled, style }: ButtonProps) => {
     return (
-        <button disabled={disabled} onClick={action}>{content}</button>
+        <button className={style} disabled={disabled} onClick={action}>{content}</button>
     )
 }

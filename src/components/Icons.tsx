@@ -77,9 +77,9 @@ export const InfoIcon = () => {
               <line
                 fill="none"
                 stroke="#000000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 x1="12"
                 x2="12"
                 y1="8"
@@ -88,9 +88,9 @@ export const InfoIcon = () => {
               <line
                 fill="none"
                 stroke="#000000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 x1="12"
                 x2="12"
                 y1="16"
@@ -104,9 +104,9 @@ export const InfoIcon = () => {
                 id="_--Circle"
                 r="10"
                 stroke="#000000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
               ></circle>{" "}
             </g>{" "}
           </g>{" "}
